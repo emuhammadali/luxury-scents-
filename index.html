@@ -3,18 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Navbar</title>
+    <title>Luxury Scents | Premium Perfume Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-purple-900 flex justify-between text-white font-bold px-5 items-center animate-pulse">
-        <h1>Navbar</h1>
-        <nav class="flex gap-4 [&_a]:p-3 [&_a]:hover:bg-purple-950 [&_a]:transition-colors [&_a]:duration-300">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="perfume-bottle-loader"></div>
+            <p>Luxury Scents</p>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="marquee">
+                    <span>✨ FREE SHIPPING ON ORDERS OVER $50 ✨</span>
+                    <span>✨ 30 DAYS RETURN POLICY ✨</span>
+                    <span>✨ 100% AUTHENTIC FRAGRANCES ✨</span>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    <h2>Luxury<span>Scents</span></h2>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#products">Collection</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <i class="fas fa-search" id="searchIcon"></i>
+                    <i class="fas fa-heart" id="wishlistIcon">
+                        <span class="badge">0</span>
+                    </i>
+                    <i class="fas fa-shopping-bag" id="cartIcon">
+                        <span class="badge">0</span>
+                    </i>
+                    <i class="fas fa-user"></i>
+                    <div class="menu-btn">☰</div>
+                </div>
+            </div>
         </nav>
     </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <i class="fas fa-times close-search"></i>
+            <input type="text" placeholder="Search for luxury fragrances..." id="searchInput">
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <i class="fas fa-times close-cart"></i>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="slide active">
+                <div class="slide-bg"></div>
+                <div class="container hero-content">
+                    <div class="hero-text" data-aos="fade-up">
+                        <span class="subtitle">Limited Edition</span>
+                        <h1>OUD <span>ROYAL</span></h1>
+                        <p>Experience the essence of luxury with our signature collection of rare and exquisite fragrances crafted for the discerning connoisseur.</p>
+                        <div class="hero-buttons">
+                            <button class="btn-primary">Shop Now →</button>
+                            <button class="btn-secondary">Discover Collection</button>
+                        </div>
+                    </div>
+                    <div class="hero-image" data-aos="fade-left">
+                        <img src="https://t4.ftcdn.net/jpg/08/45/58/95/360_F_845589510_QmbsMXwCXhQG2jrEHLrhIzQqdo1EeFe3.jpg" alt="Luxury Perfume">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Shop by <span>Category</span></h2>
+                <p>Discover our curated collection of premium fragrances</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-aos="flip-left" data-category="men">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=400" alt="Men's Perfume">
+                    </div>
+                    <div class="category-content">
+                        <h3>For Him</h3>
+                        <p>Bold & Masculine</p>
+                        <span class="product-count">24 Products</span>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="flip-left" data-category="women" data-aos-delay="100">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Women's Perfume">
+                    </div>
+                    <div class="category-content">
+                        <h3>For Her</h3>
+                        <p>Elegant & Feminine</p>
+                        <span class="product-count">32 Products</span>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="flip-left" data-category="unisex" data-aos-delay="200">
+                    <div class="category-image">
+                        <img src="https://arfragrances.pk/cdn/shop/files/WhatsApp_Image_2026-04-22_at_14.55.27.jpg?v=1776910195&width=533" alt="Unisex Perfume">
+                    </div>
+                    <div class="category-content">
+                        <h3>Unisex</h3>
+                        <p>Universal Appeal</p>
+                        <span class="product-count">18 Products</span>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="flip-left" data-category="limited" data-aos-delay="300">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400" alt="Limited Edition">
+                    </div>
+                    <div class="category-content">
+                        <h3>Limited Edition</h3>
+                        <p>Exclusive Collection</p>
+                        <span class="product-count">8 Products</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Bestselling <span>Fragrances</span></h2>
+                <p>Most loved by our customers</p>
+            </div>
+            <div class="filter-bar">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Products</button>
+                    <button class="filter-btn" data-filter="men">For Him</button>
+                    <button class="filter-btn" data-filter="women">For Her</button>
+                    <button class="filter-btn" data-filter="unisex">Unisex</button>
+                </div>
+                <div class="sort-dropdown">
+                    <select id="sortProducts">
+                        <option value="default">Sort by: Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+            <div class="load-more">
+                <button class="btn-load-more">Load More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner" data-aos="zoom-in">
+        <div class="container">
+            <div class="promo-content">
+                <h3>Limited Time Offer</h3>
+                <h2>Up to 40% Off</h2>
+                <p>On selected premium fragrances</p>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <span>Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <span>Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <span>Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <span>Seconds</span>
+                    </div>
+                </div>
+                <button class="btn-primary">Shop Sale →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=600" alt="Perfume Making">
+                    <div class="experience-badge">
+                        <span>15+</span>
+                        <p>Years of Excellence</p>
+                    </div>
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <span class="subtitle">Our Story</span>
+                    <h2>Crafting <span>Luxury</span> Since 2008</h2>
+                    <p>Luxury Scents was born from a passion for creating unforgettable fragrance experiences. We source the finest ingredients from around the world to create perfumes that tell a story.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>Natural Ingredients</h4>
+                                <p>Sourced from sustainable farms</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-flask"></i>
+                            <div>
+                                <h4>Expert Perfumers</h4>
+                                <p>Master craftsmen with decades of experience</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-gem"></i>
+                            <div>
+                                <h4>Luxury Packaging</h4>
+                                <p>Elegant and sustainable packaging</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <h4>Worldwide Shipping</h4>
+                                <p>Fast and secure delivery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>What Our <span>Customers</span> Say</h2>
+                <p>Trusted by fragrance lovers worldwide</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p>Absolutely stunning fragrance! The longevity is incredible and the scent evolves beautifully throughout the day.</p>
+                    <div class="customer">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Customer">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p>The best perfume store I've ever experienced. Premium quality and exceptional customer service.</p>
+                    <div class="customer">
+                        <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Customer">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p>Their OUD collection is unmatched. The packaging alone feels like a luxury gift.</p>
+                    <div class="customer">
+                        <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Customer">
+                        <div>
+                            <h4>Emma Rodriguez</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <i class="fas fa-envelope-open-text"></i>
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get 10% off your first order and exclusive updates on new launches</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2>Get In <span>Touch</span></h2>
+                    <p>Have questions? We'd love to hear from you.</p>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Visit Our Store</h4>
+                            <p>123 Luxury Avenue, New York, NY 10001</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+1 (234) 567-8900</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>info@luxuryscents.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Phone Number">
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn-primary">Send Message →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-crown"></i>
+                        <h3>Luxury<span>Scents</span></h3>
+                    </div>
+                    <p>Experience the art of fine fragrance. We bring you the world's most exquisite scents.</p>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Shop</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Luxury Scents. All rights reserved. | Designed for FYP Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
