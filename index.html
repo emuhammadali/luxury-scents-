@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Navbar</title>
 </head>
 <body>
-    
+    <header class="bg-purple-900 flex justify-between text-white font-bold px-5 items-center animate-pulse">
+        <h1>Navbar</h1>
+        <nav class="flex gap-4 [&_a]:p-3 [&_a]:hover:bg-purple-950 [&_a]:transition-colors [&_a]:duration-300">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 </body>
 </html>
